@@ -15,7 +15,7 @@ export const Providers = ({ children }: ProvidersProps) => {
       {children}
       <ModalTaskEditor />
       <ModalBoardEditor />
-      <ToastContainer />
+      <ToastContainer theme="colored" />
     </>
   );
 };
