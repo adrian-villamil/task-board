@@ -1,13 +1,19 @@
 import { create } from "zustand";
 
 export interface State {
-  isOpenEditModal: boolean;
-  openEditModal: () => void;
-  closeEditModal: () => void;
+  isOpenTaskModal: boolean;
+  isOpenBoardModal: boolean;
+  openTaskModal: () => void;
+  openBoardModal: () => void;
+  closeTaskModal: () => void;
+  closeBoardModal: () => void;
 }
 
 export const useUIStore = create<State>()((set) => ({
-  isOpenEditModal: false,
-  openEditModal: () => set({ isOpenEditModal: true }),
-  closeEditModal: () => set({ isOpenEditModal: false }),
+  isOpenTaskModal: false,
+  isOpenBoardModal: false,
+  openTaskModal: () => set({ isOpenTaskModal: true }),
+  openBoardModal: () => set({ isOpenBoardModal: true }),
+  closeTaskModal: () => set({ isOpenTaskModal: false }),
+  closeBoardModal: () => set({ isOpenBoardModal: false }),
 }));

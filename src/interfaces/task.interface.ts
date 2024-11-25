@@ -1,9 +1,10 @@
 export interface Task {
   id: string;
   name: string;
-  description: string | null;
+  description?: string | null;
   icon: TaskIcon;
-  status: TaskStatus;
+  status?: TaskStatus;
+  boardId: string | null;
 }
 
 export type TaskIcon = 'man-working' | 'dialog' | 'coffee' | 'weightlifter' | 'books' | 'clock';
