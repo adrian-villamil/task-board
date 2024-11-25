@@ -14,6 +14,7 @@ export const getTasksByBoardId = async (boardId: string) => {
       tasks,
     }
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: `Board with id ${getLastUUIDSegment(boardId)} has not tasks.`,

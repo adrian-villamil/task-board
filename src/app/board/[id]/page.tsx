@@ -35,9 +35,9 @@ export default async function BoardPage({ params }: Props) {
         </div>
         <div className="space-y-5">
           <Suspense fallback={<TaskListSkeleton />}>
-            <TaskList boardId={result.board?.id!} />
+            <TaskList boardId={result.board?.id ?? ''} />
           </Suspense>
-          <CreateTaskButton boardId={result.board?.id!} />
+          <CreateTaskButton boardId={result.board?.id ?? ''} />
         </div>
       </div>
     </main>

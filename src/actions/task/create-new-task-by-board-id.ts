@@ -19,6 +19,7 @@ export const CreateNewTaskByBoardId = async (id: string) => {
       message: 'New task added to your board.',
     };
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: 'Failed to create a new task.',

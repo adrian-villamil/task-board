@@ -18,6 +18,7 @@ export const editBoardById = async (id: string, board: Board) => {
       message: `Board with id ${getLastUUIDSegment(id)} was updated successfully.`,
     };
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: `Couldn't update board with id ${getLastUUIDSegment(id)}.`,

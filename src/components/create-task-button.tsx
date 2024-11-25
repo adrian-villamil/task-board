@@ -3,6 +3,7 @@
 import { useFormStatus } from "react-dom";
 import clsx from "clsx";
 import { CreateNewTaskByBoardId } from "@/actions/task/create-new-task-by-board-id";
+import { toast } from "react-toastify";
 
 interface Props {
   boardId: string;
@@ -13,7 +14,11 @@ export const CreateTaskButton = ({ boardId }: Props) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const response = await CreateNewTaskByBoardId(boardId);
+    const result = await CreateNewTaskByBoardId(boardId);
+
+    if (!result.ok) toast.error(result.message);
+
+    toast.success(result.message);
   };
 
   return (

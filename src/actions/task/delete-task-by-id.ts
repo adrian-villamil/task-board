@@ -17,6 +17,7 @@ export const DeleteTaskById = async (id: string) => {
       message: `The task with id ${getLastUUIDSegment(id)} was deleted successfully.`,
     };
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: `Couldn't delete the task with id ${getLastUUIDSegment(id)}.`,

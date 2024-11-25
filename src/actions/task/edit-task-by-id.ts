@@ -18,6 +18,7 @@ export const EditTaskById = async (id: string, task: Task) => {
       message: `Task with id ${getLastUUIDSegment(id)} was updated successfully`,
     }
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: `Couldn't update task with id ${getLastUUIDSegment(id)}`,

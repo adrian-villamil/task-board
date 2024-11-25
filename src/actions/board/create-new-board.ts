@@ -21,6 +21,7 @@ export const createNewBoard = async () => {
       boardId,
     }
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: "Couldn't create a board",

@@ -14,6 +14,7 @@ export const getBoardInfoById = async (boardId: string) => {
       board,
     }
   } catch (error) {
+    console.log(error);
     return {
       ok: false,
       message: `Board with id ${getLastUUIDSegment(boardId)} doesn't exist`,
