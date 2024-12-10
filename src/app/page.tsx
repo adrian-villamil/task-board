@@ -3,6 +3,7 @@
 import { createNewBoard } from '@/actions/board/create-new-board';
 import { useBoardStore } from '@/store/board-store';
 import { Outfit } from 'next/font/google';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -36,7 +37,18 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className={`min-h-screen pt-[54px] ${outfitFont.className} bg-[#F8FAFC]`}>
+    <main className={`min-h-screen pt-[54px] flex justify-center items-center ${outfitFont.className} bg-[#F8FAFC]`}>
+      <div className='flex items-center gap-x-4'>
+        <Image
+          src={'/loader_home.svg'}
+          alt='loader-icon'
+          width={60}
+          height={60}
+          priority
+          className='animate-spin'
+        />
+        <h1 className='text-5xl font-semibold text-[#00aaff]'>Loading...</h1>
+      </div>
     </main>
   );
 }
